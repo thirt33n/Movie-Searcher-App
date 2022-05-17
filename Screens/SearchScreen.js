@@ -2,27 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState,useEffect } from 'react';
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
 import { Searchbar } from 'react-native-paper';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import axios from 'axios';
 
-export default function SearchScreen() {
+export default function SearchScreen({navigation}) {
 
     const [searchQuery, setSearchQuery] =useState('');
 
-    const APIKey = '2a60b134'
-    const baseUrl = 'http://www.omdbapi.com/?t='
-    const and = '&apikey='
-    const url = baseUrl+searchQuery+and+APIKey
-    function search(){
-        console.log(url);
-        try{
-           axios.get(url).then((response) => {
-                console.log(response.data);
-            });
-        }catch(error)
-        {
-            console.log(error)
-        }
-    }
+
+
   const onChangeSearch = query => setSearchQuery(query);
   return (
     <View style={styles.container}>
@@ -32,9 +21,21 @@ export default function SearchScreen() {
       value={searchQuery}
       style={styles.bar}
     />
-    <TouchableOpacity onPress={search} style={styles.button}>
+    <TouchableOpacity onPress={() =>{
+      console.log(searchQuery)
+      navigation.navigate('SearchResults', {
+        itemId: 86,
+        otherParam: {searchQuery},
+      })
+
+    }} style={styles.button}>
         <Text>Search</Text>
     </TouchableOpacity>
+    <View style={{display:'flex',flexDirection:'row'}}>
+      <MaterialCommunityIcons name="movie-open" size={150} color="white" style={{marginTop:'20%'}}/>
+      <MaterialCommunityIcons name="popcorn" size={150} color="white" style={{marginTop:'50%'}} />
+      <MaterialCommunityIcons name="television-shimmer" size={150} color="white" style={{marginTop:'80%'}} />
+    </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -64,3 +65,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12
   }
 });
+
+

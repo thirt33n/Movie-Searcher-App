@@ -8,4 +8,5 @@ packages to install:
      @react-navigation/bottom-tabs
    react-native-elements
    react-native-paper
-
+   @react-navigation/native-stack
+react-native-screens

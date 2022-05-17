@@ -7,6 +7,50 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Fontisto } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import SearchScreen from './Screens/SearchScreen';
+import SearchResults from './Screens/SearchResults';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+
+
+const MainStack = createNativeStackNavigator();
+
+export function ReactStackNavigation(){
+  return(
+  <MainStack.Navigator>
+      <MainStack.Screen name="SearchScreen"
+       component={SearchScreen}
+       options={()=>({
+          headerStyle:
+              {
+                  backgroundColor:'#1DB953',
+                  shadowColor: 'transparent', 
+                  elevation: 0,
+              },
+              headerShadowVisible:false,   
+              headerShown:false
+                  })
+              } 
+              
+          />
+      <MainStack.Screen name="SearchResults" 
+      component={SearchResults}
+          options={()=>({
+          headerStyle: 
+              {
+                  backgroundColor:'#1DB953',
+                  shadowColor: 'transparent', 
+                  elevation: 0,
+              },
+              headerShadowVisible:false,
+              headerShown:false
+              })
+              } 
+          />
+  </MainStack.Navigator>
+  );
+}
+
+
 
 const Tab = createBottomTabNavigator();
 
@@ -45,7 +89,7 @@ export default function App() {
       
       >
         <Tab.Screen name='Home' component={HomePage} />
-        <Tab.Screen name='Search' component={SearchScreen} />
+        <Tab.Screen name='Search' component={ReactStackNavigation} />
 
       </Tab.Navigator>
 
