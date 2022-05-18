@@ -8,7 +8,7 @@ const MainStack   =  createNativeStackNavigator();
 
 export default function ReactStackNavigation(){
     return(
-    <MainStack.Navigator>
+    <MainStack.Navigator >
         <MainStack.Screen name="SearchScreen"
          component={SearchScreen}
          options={()=>({
@@ -21,7 +21,7 @@ export default function ReactStackNavigation(){
                 headerShadowVisible:false,   
                 headerShown:false
                     })
-                } 
+                }
                 
             />
         <MainStack.Screen name="SearchResults" component={SearchResults}
