@@ -1,6 +1,10 @@
 # Movie-Searcher-App
 An app made using react native to search for movies using the Omdb api
 
+## Authors
+- [Siddharth P](https://github.com/thirt33n)
+- [Leela Karthikeyan](https://github.com/LEELAKARTHIKEYAN)
+
 
 Video:
 

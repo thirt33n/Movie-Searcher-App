@@ -84,9 +84,6 @@ export default function App() {
               null
             ]
           })}
-        
-
-      
       >
         <Tab.Screen name='Home' component={HomePage} />
         <Tab.Screen name='Search' component={ReactStackNavigation} />

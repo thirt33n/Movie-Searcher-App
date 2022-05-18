@@ -32,9 +32,9 @@ export default function SearchScreen({navigation}) {
         <Text>Search</Text>
     </TouchableOpacity>
     <View style={{display:'flex',flexDirection:'row'}}>
-      <MaterialCommunityIcons name="movie-open" size={150} color="white" style={{marginTop:'20%'}}/>
-      <MaterialCommunityIcons name="popcorn" size={150} color="white" style={{marginTop:'50%'}} />
-      <MaterialCommunityIcons name="television-shimmer" size={150} color="white" style={{marginTop:'80%'}} />
+      <MaterialCommunityIcons name="movie-open" size={100} color="#FF4949" style={{marginTop:'20%'}}/>
+      <MaterialCommunityIcons name="popcorn" size={100} color="#FFCD38" style={{marginTop:'50%'}} />
+      <MaterialCommunityIcons name="television-shimmer" size={100} color="#AB46D2" style={{marginTop:'80%'}} />
     </View>
       <StatusBar style="auto" />
     </View>
@@ -44,7 +44,7 @@ export default function SearchScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#14171A',
+    backgroundColor: '#15133C',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },

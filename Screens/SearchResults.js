@@ -31,9 +31,10 @@ export default function SearchResults({route,navigation}){
   
  if(!dataa.Title)
   return(
-    <View style={styles.container}>
-    <Text style={styles.text}>ERROR 404: NOT FOUND</Text>
-    <MaterialIcons name="error-outline" size={150} color="white" />
+    <View style={styles.container1}>
+      <Text style={styles.errortext}>Search results: "Not Found ~ `404 ERROR `"</Text>
+      {/* <MaterialIcons name="error" size={170} color="white" styles={{marginLeft:'20%'}}/> */}
+      <Image style={styles.erimage} source={{uri:'https://w0.peakpx.com/wallpaper/734/528/HD-wallpaper-broken-heart-bart-cartoon-crying-emo-girl-love-pain-sad.jpg'}} />
     <StatusBar style="auto" />
   </View>
   )
@@ -42,14 +43,15 @@ export default function SearchResults({route,navigation}){
      
       <View style={styles.container}>
      
-        <Text style={[styles.text,styles.title]}>{dataa.Title}</Text>
+        <Text style={styles.title}>{dataa.Title}</Text>
             <Image style={styles.image} source={{uri:`${dataa.Poster}`}} />
             <Text style={[styles.text,styles.genre]}>Genre: {dataa.Genre} </Text>
             <Text style={[styles.text,styles.genre]}>Release: {dataa.Released} </Text>
             <Text style={[styles.text,styles.genre]}>Actors: {dataa.Actors}</Text>
             <Text style={[styles.text,styles.genre]}>Language: {dataa.Language}</Text>
-            {/* <Text style={[styles.text,styles.genre]}>Imdb: {dataa.Ratings[0].Value}</Text> */}
-         <Text style={[styles.text,styles.plot]}>Plot: {dataa.Plot}</Text>
+            <Text style={[styles.text,styles.genre]}>Imdb: {dataa.Ratings[0].Value}</Text>
+            <Text style={{color:'#FF4949',fontSize:16,fontWeight:'bold',marginLeft:'5%',marginTop:'5%'}}>Plot:</Text>
+            <Text style={styles.plot}> {dataa.Plot}</Text>
 
 
         <StatusBar style="auto" />
@@ -62,30 +64,51 @@ export default function SearchResults({route,navigation}){
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#14171A',
-      justifyContent: 'flex-start',
-    },
-    text: {
-        color: 'white'
-    },
-    image:{
-      height:'45%',
-      width:'50%',
-      marginLeft:'25%'
-    },
-    title:{
-      fontSize: 40,
-      fontWeight: 'bold',
-      marginBottom: '7%',
-    
+      backgroundColor: '#151515',
+      allignItems: 'center',
+      justifyContent: 'center',
      
     },
-    plot:{
+    container1: {
+      flex: 1,
+      backgroundColor: '#151515',
+      allignItems: 'center',
+      justifyContent: 'center',
+      flexDirection:'column',
+     
+    },
+    erimage: {
+      flex:1,
+      marginRight:'2%',
+      marginTop:'5%',
+    },
+    errortext:{
+        color: 'white',
         fontSize:20,
-        marginTop:'5%'
+        fontFamily: 'sans-serif-light',
+        padding:'5%',
+    },
+    text: {
+        color: '#FFE59D',
+    },
+    image:{
+      height:'40%',
+      width:'70%',
+      marginLeft: '15%',
+    },
+    title:{
+      fontSize: 25,
+      marginVertical: '4%',
+      marginLeft:'4%',
+      color:'#FF4949'
+    },
+    plot:{
+        fontSize:13,
+        paddingHorizontal: '4%',
+        color:'white'
     },
     genre:{
-      marginTop:'3%',
+      marginTop:'2%',
       marginLeft: '7%'
     }
   });
