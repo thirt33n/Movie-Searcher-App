@@ -20,7 +20,7 @@ An app made using react native to search for movies using the Omdb API
 - My contribution in this App was to develop the UI and make sure the API fetches data and displays correctly in UI.
 -- ***Thank you***
 
-##Video:
+## Video:
 
 
 
